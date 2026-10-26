@@ -2,7 +2,7 @@
 
 Yet another Movie Data Capture tool
 
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/li-peifeng/NGi?label=mdc-ng)](https://github.com/li-peifeng/NGi/releases)
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/li-peifeng/NGi?label=MDC-NGi)](https://github.com/li-peifeng/NGi/releases)
 [![Docker Pulls](https://img.shields.io/docker/pulls/leolitaly/mdc-ngi?color=orange)](https://hub.docker.com/r/leolitaly/mdc-ngi/tags)
 
 Telegram发布频道：https://t.me/mdc_ngi
