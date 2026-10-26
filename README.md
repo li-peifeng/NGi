@@ -5,6 +5,10 @@ Yet another Movie Data Capture tool
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/li-peifeng/NGi?label=MDC-NGi)](https://github.com/li-peifeng/NGi/releases)
 [![Docker Pulls](https://img.shields.io/docker/pulls/leolitaly/mdc-ngi?color=orange)](https://hub.docker.com/r/leolitaly/mdc-ngi/tags)
 
+## 写在前面
+
+此程序非我原创，单纯出于喜欢，作者可能出于工作原因很长时间没有更新，我重构了此软件，所有源码都是反推出来的，如有冒犯，诉请见谅。
+
 Telegram发布频道：https://t.me/mdc_ngi
 
 ## Features
@@ -25,6 +29,8 @@ Telegram发布频道：https://t.me/mdc_ngi
 **前端**：Next.js - 现代化React框架，优秀的用户体验
 
 **数据库**：SQLite - 轻量级嵌入式数据库，零配置，易维护
+
+**Postgres**：支持数据库模式，更强劲
 
 **技术优势**：
 - 🚀 **高性能**：Rust原生性能，多线程并发处理，刮削速度快
