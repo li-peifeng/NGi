@@ -1,4 +1,4 @@
-# MDC-N(ext)G(eneration)i(nnovation)
+# MDC-Next_Generation_innovation
 
 Yet another Movie Data Capture tool
 
