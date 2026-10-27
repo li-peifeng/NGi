@@ -93,7 +93,7 @@ Telegram发布频道：https://t.me/mdc_ngi
 ```yaml
 services:
   ngi:
-    image: leolitaly/mdc-ngi:beta
+    image: leolitaly/mdc-ngi:latest
     container_name: ngi
     user: "0:0"
     ports:
