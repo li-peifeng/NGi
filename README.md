@@ -101,8 +101,6 @@ services:
       - 19218:19218
     environment:
       - TZ=Europe/Rome
-      - MDC_USERNAME=admin # 用户名密码可选，配置后开启登录鉴权模块
-      - MDC_PASSWORD=admin 
     volumes:
       - ./data:/data
     stop_grace_period: 40s
