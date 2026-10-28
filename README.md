@@ -111,9 +111,9 @@ services:
 
 ## 支持一下原作者
 
-你可以送一杯咖啡，以表示对这个项目的支持😉
+你可以送一杯咖啡给上游原作者，以表示对这个项目的支持😉
 
-<img src="https://user-images.githubusercontent.com/124132602/222636597-f8d48940-a528-41e8-9362-8d15f7517bf6.png" width="300" />
+<img src="https://user-images.githubusercontent.com/124132602/222636597-f8d48940-a528-41e8-9362-8d15f7517bf6.png" width="200" />
 
 ## 也可以支持一下我，哈哈
 
