@@ -4,6 +4,22 @@
 
 [应用发布页](https://github.com/li-peifeng/NGi/releases) · [Docker Hub](https://hub.docker.com/r/leolitaly/mdc-ngi/tags) · [部署说明](README.md#部署)
 
+## 26.9.6
+
+[应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.9.6) · 2026-11-20
+
+### ✨ 新功能
+
+- 刮削记录标记标题或简介翻译失败，可在「任务状态」中筛选
+- 刮削记录的画廊按图片文件名排列，数字按大小排序
+
+### 🐛 修复
+
+- Magic Tools 提交的多个视频会进入刮削等待列表，按刮削线程设置并行处理。
+- 手动任务表头全选会选中所有符合当前筛选条件的任务，翻页后保留勾选
+- 优化手动任务列表排版，对齐搜索、状态和创建按钮，让批量操作与删除提示更清晰
+- 「更新」页的「更新日志」现在打开完整的历史更新记录
+
 ## 26.9.5
 
 [应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.9.5) · 2026-11-20
