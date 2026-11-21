@@ -4,6 +4,16 @@
 
 [应用发布页](https://github.com/li-peifeng/NGi/releases) · [Docker Hub](https://hub.docker.com/r/leolitaly/mdc-ngi/tags) · [部署说明](README.md#部署)
 
+## 26.9.9
+
+[应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.9.9) · 2026-11-21
+
+### 🐛 修复
+
+- STRM 洗版溯源缩小到相关视频目录。清理可包含海报、缩略图、背景图、NFO、剧照、字幕和预告片
+- 首页「洗版记录」只统计实际处理过旧版视频的洗版，单纯检查或保留旧版时不会增加数量
+- 修复洗版核对同路径旧原片时，可能因扫描无关 STRM 目录和历史路径而超时的问题
+
 ## 26.9.8
 
 [应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.9.8) · 2026-11-21
