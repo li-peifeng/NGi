@@ -6,7 +6,7 @@
 
 ## 26.11.21
 
-[Docker 镜像](https://hub.docker.com/r/leolitaly/mdc-ngi/tags?name=26.11.21) · 2026-11-21
+[应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.21) · 2026-11-21 ｜ [Docker 镜像](https://hub.docker.com/r/leolitaly/mdc-ngi/tags?name=26.11.21) · 2026-11-21
 
 ### 🐛 修复
 
