@@ -4,6 +4,19 @@
 
 [应用发布页](https://github.com/li-peifeng/NGi/releases) · [Docker Hub](https://hub.docker.com/r/leolitaly/mdc-ngi/tags) · [部署说明](README.md#部署)
 
+## 26.9.8
+
+[应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.9.8) · 2026-11-21
+
+### ✨ 新功能
+
+- 密码输错按 IP 累计，换用户名也会计数。临时禁用时显示倒计时，反复输错会封禁 IP，可通过重置密码并成功登录解除（规则：3 次错误封锁 10 分钟，6 次错误封禁 24 小时，第 7 次错误永久封禁 IP ）
+- 用户设置可添加和删除 Passkey，登录时可直接使用指纹、面容、设备 PIN 或安全密钥
+
+### 🐛 修复
+
+- 优化登录页排版，让禁用提示、倒计时和 Passkey 入口更清楚
+
 ## 26.9.7
 
 [应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.9.7) · 2026-11-20
