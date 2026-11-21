@@ -4,6 +4,20 @@
 
 [应用发布页](https://github.com/li-peifeng/NGi/releases) · [Docker Hub](https://hub.docker.com/r/leolitaly/mdc-ngi/tags) · [部署说明](README.md#部署)
 
+## 26.11.21
+
+[Docker 镜像](https://hub.docker.com/r/leolitaly/mdc-ngi/tags?name=26.11.21) · 2026-11-21
+
+### 🐛 修复
+
+- 刮削通知按当前任务的演员筛选和人数上限显示，修复单人作品被显示为「多人作品」的问题
+
+### ⚠️ 破坏性变更
+
+- 版本号改用发布日期，例如 26.11.21。同日第二版起依次加 .1、.2。已有 Docker 部署需先升级基础镜像，再继续使用应用更新。
+
+Docker 镜像版本 26.11.21 以下需要更新镜像！
+
 ## 26.9.9
 
 [应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.9.9) · 2026-11-21
