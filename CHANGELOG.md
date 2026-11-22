@@ -4,6 +4,19 @@
 
 [应用发布页](https://github.com/li-peifeng/NGi/releases) · [Docker Hub](https://hub.docker.com/r/leolitaly/mdc-ngi/tags) · [部署说明](README.md#部署)
 
+## 26.11.22.4
+
+[应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.22.4) · 2026-11-22
+
+### ✨ 新功能
+
+- 刮削记录画廊中的剧照按文件名排列，数字按大小排序
+
+### 🐛 修复
+
+- 刮削记录详情的画廊先显示缩略图，再显示剧照
+- 运行日志按洗版、字幕仓库等来源分类
+
 ## 26.11.22.3
 
 [应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.22.3) · 2026-11-22
