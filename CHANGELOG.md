@@ -4,6 +4,15 @@
 
 [应用发布页](https://github.com/li-peifeng/NGi/releases) · [Docker Hub](https://hub.docker.com/r/leolitaly/mdc-ngi/tags) · [部署说明](README.md#部署)
 
+## 26.11.22.3
+
+[应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.22.3) · 2026-11-22
+
+### 🐛 修复
+
+- 修复监控目录关闭「使用全局配置」后，下载设置直接保存会误报目录变化、重新打开后无法编辑的问题
+- 修复手动填写的演员被隐藏的问题，保存后会同步到刮削记录、命名和 NFO
+
 ## 26.11.22.2
 
 [应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.22.2) · 2026-11-22
