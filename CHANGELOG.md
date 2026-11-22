@@ -4,6 +4,20 @@
 
 [应用发布页](https://github.com/li-peifeng/NGi/releases) · [Docker Hub](https://hub.docker.com/r/leolitaly/mdc-ngi/tags) · [部署说明](README.md#部署)
 
+## 26.11.22.2
+
+[应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.22.2) · 2026-11-22
+
+### ✨ 新功能
+
+- 字幕仓库更新后，自动给无字幕的刮削记录补下载匹配字幕，并按设置给图片加上字幕水印
+
+### 🐛 修复
+
+- 在线下载的字幕统一转成 UTF-8 保存，减少在 Emby 播放时因编码不同出现的乱码
+- NGi 字幕仓库直接按简体中文处理，迅雷字幕只按文件名判断语言，避免中文字幕被误判跳过
+- 修复手机上选择封面裁剪的「原图来源」时弹窗跳到屏幕顶部、选项被遮挡的问题
+
 ## 26.11.22.1
 
 [应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.22.1) · 2026-11-22
