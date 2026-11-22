@@ -4,6 +4,27 @@
 
 [应用发布页](https://github.com/li-peifeng/NGi/releases) · [Docker Hub](https://hub.docker.com/r/leolitaly/mdc-ngi/tags) · [部署说明](README.md#部署)
 
+## 26.11.22
+
+[应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.22) · 2026-11-22
+
+### ✨ 新功能
+
+- 密码输错按 IP 累计，换用户名也会计数。临时禁用时显示倒计时，反复输错会封禁 IP，可通过重置密码并成功登录解除
+  ***（规则：3 次错误封锁 10 分钟，6 次错误封禁 24 小时，第 7 次错误永久封禁 IP ）
+
+### 🐛 修复
+
+- 修复手机上滚动任务详情后，选择封面裁剪的「原图来源」时弹窗跳到屏幕顶部、选项被遮挡的问题
+
+### ⚠️ 破坏性变更
+
+- 版本号改用发布日期，例如 26.11.21。
+  已有 Docker 部署需先升级基础镜像，再继续使用应用更新。
+
+当前 HUB Docker 最新 Latest 版本 26.11.21
+Docker 镜像版本 26.11.21 以下需要更新镜像！
+
 ## 26.11.21
 
 [应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.21) · 2026-11-21 ｜ [Docker 镜像](https://hub.docker.com/r/leolitaly/mdc-ngi/tags?name=26.11.21) · 2026-11-21
