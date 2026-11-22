@@ -4,6 +4,14 @@
 
 [应用发布页](https://github.com/li-peifeng/NGi/releases) · [Docker Hub](https://hub.docker.com/r/leolitaly/mdc-ngi/tags) · [部署说明](README.md#部署)
 
+## 26.11.22.1
+
+[应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.22.1) · 2026-11-22
+
+### 🐛 修复
+
+- 刮削记录的「任务状态」全选时未选中「翻译失败」的问题
+
 ## 26.11.22
 
 [应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.22) · 2026-11-22
