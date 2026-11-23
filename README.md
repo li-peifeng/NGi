@@ -98,6 +98,7 @@ services:
       - TZ=Europe/Rome
     volumes:
       - ./data:/data
+      - /etc/machine-id:/run/ngi-host-id:ro # PRO 版本必须挂载这一行
     stop_grace_period: 40s
     restart: unless-stopped
     security_opt:
