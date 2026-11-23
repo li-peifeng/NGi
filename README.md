@@ -113,6 +113,12 @@ services:
 
 将该文件放在原 Compose 文件旁，保留原 `/data`，按实际文件名执行 `docker compose -f compose.yaml -f compose.license-id.yaml up -d ngi`。标识会自动保存在独立的 `ngi-license-id` 命名卷。许可证页出现「已检测到挂载的设备标识」后即可激活 PRO。重建时沿用同一 Compose 项目名并保留该卷。
 
+#### 可选的手动配置
+
+在 NAS 的 Compose 项目目录下准备普通文件 `id`，与 `data` 目录并列，确保容器运行用户可读。**首次激活且尚未准备标识文件时**，可在该目录执行 `openssl rand -hex 16 > ./id` 生成一次。已有文件绑定请沿用原标识。
+
+在 `ngi` 服务的 `volumes` 下添加 `- ./id:/ngi-id:ro`，保留原 `/data` 挂载，再重新部署容器。后续重建时复用同一个 `id` 文件。
+
 已激活的实例需要保留原绑定。已有文件标识的部署可继续使用 `/etc/machine-id:/run/ngi-host-id:ro`，改用 `./id` 时请原样复制旧标识。已有 UUID 绑定的部署在调整容器运行用户后仍需能读取原 UUID。详见 [Wiki 的 PRO 版设备标识说明](https://github.com/li-peifeng/NGi/wiki/Docker%E9%83%A8%E7%BD%B2#pro-%E7%89%88%E8%AE%BE%E5%A4%87%E6%A0%87%E8%AF%86)。
 
 
