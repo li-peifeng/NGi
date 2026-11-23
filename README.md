@@ -98,12 +98,15 @@ services:
       - TZ=Europe/Rome
     volumes:
       - ./data:/data
-      - /etc/machine-id:/run/ngi-host-id:ro # PRO 版本必须挂载这一行
+      # PRO 版挂载，启用前请先准备标识文件
+      - /id:/ngi-id:ro
     stop_grace_period: 40s
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true
 ```
+
+标准版可省略设备标识挂载。使用支持 `/ngi-id` 的 NGi 版本时，PRO 版可按示例挂载。先在宿主机准备容器可读的 `/id` 文件。已激活的实例请将原标识内容原样复制到 `/id`，并保留原 `/data` 挂载。旧版应用继续使用 `/etc/machine-id:/run/ngi-host-id:ro`。详见 [Wiki 的 PRO 版设备标识说明](https://github.com/li-peifeng/NGi/wiki/Docker%E9%83%A8%E7%BD%B2#pro-%E7%89%88%E8%AE%BE%E5%A4%87%E6%A0%87%E8%AF%86)。
 
 ## 支持一下原作者
 
