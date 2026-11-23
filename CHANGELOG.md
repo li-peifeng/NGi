@@ -4,6 +4,25 @@
 
 [应用发布页](https://github.com/li-peifeng/NGi/releases) · [Docker Hub](https://hub.docker.com/r/leolitaly/mdc-ngi/tags) · [部署说明](README.md#部署)
 
+## 26.11.23
+
+[Docker 镜像](https://hub.docker.com/r/leolitaly/mdc-ngi/tags?name=26.11.23) · 2026-11-23
+
+### 🐛 修复
+
+- 修复批量监控到的文件迟迟不出现在任务列表可能丢失的问题
+- 修复原生目录监控在整个文件夹移入时漏掉里面视频的问题
+- 修复字幕仓库给 CloudDrive2 等网盘挂载目录补字幕时可能报「操作不允许」的问题，保留已有字幕
+
+### 🔑 PRO 版本试运行
+
+- 暂时只添加一个主题配色，后续会添加更多特色功能
+
+版本说明：由于开发维护占用大量的时间成本和支出（大部分是 AI 的支出，再次感谢大佬 Vera Lambert 的无私支持），我原本的 Chatgpt Plus 根本不够用，现开了 5X，还是捉襟见肘，幸好有大佬支持。 所以试运行 Pro 版本定价 29 元，现有功能不会有任何减弱，以后可能某些特色功能先开放给 PRO 版本用户，版本维护更新都是一致的，标准版 和 PRO 版本没有区别，希望能拉平一点支出吧， 原爱发电的已发电用户我已全部私信发出许可证激活码， 群里有提过 BUG 反馈和建议被采纳的朋友可以私聊我，赠送许可证一枚。
+
+当前 HUB Docker 最新 Latest 版本 26.11.23
+Docker 镜像版本 26.11.23 以下需要更新镜像！
+
 ## 26.11.22.4
 
 [应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.22.4) · 2026-11-22
