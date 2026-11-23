@@ -4,6 +4,14 @@
 
 [应用发布页](https://github.com/li-peifeng/NGi/releases) · [Docker Hub](https://hub.docker.com/r/leolitaly/mdc-ngi/tags) · [部署说明](README.md#部署)
 
+## 26.11.24
+
+[Docker 镜像](https://hub.docker.com/r/leolitaly/mdc-ngi/tags?name=26.11.24) · 2026-11-24
+
+### ✨ 新功能
+
+- 许可证页的设备识别号默认只显示头尾各 8 位，点击旁边的图标可查看完整号码
+
 ## 26.11.23.5
 
 [应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.23.5) · 2026-11-23
