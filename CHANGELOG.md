@@ -6,11 +6,16 @@
 
 ## 26.11.24
 
-[Docker 镜像](https://hub.docker.com/r/leolitaly/mdc-ngi/tags?name=26.11.24) · 2026-11-24
+[应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.24) · 2026-11-24 ｜ [Docker 镜像](https://hub.docker.com/r/leolitaly/mdc-ngi/tags?name=26.11.24) · 2026-11-24
 
 ### ✨ 新功能
 
 - 许可证页的设备识别号默认只显示头尾各 8 位，点击旁边的图标可查看完整号码
+
+### 🔑 PRO 版本试运行
+
+当前 HUB Docker 最新 Latest 版本 26.11.24
+Docker 镜像版本 26.11.24 以下需要更新镜像！
 
 ## 26.11.23.5
 
