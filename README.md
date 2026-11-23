@@ -98,15 +98,26 @@ services:
       - TZ=Europe/Rome
     volumes:
       - ./data:/data
-      # PRO 版挂载，启用前请先准备标识文件
-      - /id:/ngi-id:ro
+      # PRO 的 UUID 读取失败时，先准备 ./id 文件，再取消下一行的注释。
+      # - ./id:/ngi-id:ro
     stop_grace_period: 40s
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true
 ```
 
-标准版可省略设备标识挂载。使用支持 `/ngi-id` 的 NGi 版本时，PRO 版可按示例挂载。先在宿主机准备容器可读的 `/id` 文件。已激活的实例请将原标识内容原样复制到 `/id`，并保留原 `/data` 挂载。旧版应用继续使用 `/etc/machine-id:/run/ngi-host-id:ro`。详见 [Wiki 的 PRO 版设备标识说明](https://github.com/li-peifeng/NGi/wiki/Docker%E9%83%A8%E7%BD%B2#pro-%E7%89%88%E8%AE%BE%E5%A4%87%E6%A0%87%E8%AF%86)。
+### PRO 版设备标识
+
+从应用版本 `26.11.23.3` 起，NGi 新激活 PRO 时优先读取 NAS 硬件 UUID。能读到 UUID 时，可以直接激活。标准版也可直接使用上面的 Compose。能否读取取决于 NAS 和容器运行用户。
+
+如果「设置 → 许可证」提示无法读取硬件 UUID：
+
+1. 在 Compose 文件旁准备一个容器用户可读的普通文件 `id`，与 `data` 目录并列。首次激活且尚未准备标识文件时，可执行 `openssl rand -hex 16 > ./id` 生成一次。
+2. 取消上面 `- ./id:/ngi-id:ro` 的注释，保留原 `./data:/data`，然后重新部署容器。
+3. 回到许可证页，确认显示「已检测到挂载的设备标识」，再激活 PRO。
+
+已激活的实例需要保留原绑定。已有文件标识的部署可继续使用 `/etc/machine-id:/run/ngi-host-id:ro`，改用 `./id` 时请原样复制旧标识。已有 UUID 绑定的部署在调整容器运行用户后仍需能读取原 UUID。详见 [Wiki 的 PRO 版设备标识说明](https://github.com/li-peifeng/NGi/wiki/Docker%E9%83%A8%E7%BD%B2#pro-%E7%89%88%E8%AE%BE%E5%A4%87%E6%A0%87%E8%AF%86)。
+
 
 ## 支持一下原作者
 
