@@ -1,0 +1,58 @@
+# 硬件 UUID 不可用时叠加此配置。已有文件绑定的实例保留原挂载。
+# 使用包含设备标识自动生成支持的 NGi 应用版本。
+services:
+  ngi:
+    depends_on:
+      license-id-init:
+        condition: service_completed_successfully
+    volumes:
+      - ngi-license-id:/run/ngi-license-id:ro
+
+  license-id-init:
+    image: "${NG_LICENSE_IMAGE:-leolitaly/mdc-ngi:latest}"
+    user: "0:0"
+    entrypoint: ["python3", "-I", "-B", "-c"]
+    command:
+      - |
+        import os
+        import re
+        import secrets
+        import tempfile
+        from pathlib import Path
+
+        directory = Path('/identity')
+        identity = directory / 'id'
+        if not os.path.lexists(identity):
+            with tempfile.NamedTemporaryFile(dir=directory) as seed:
+                seed.write((secrets.token_hex(16) + '\n').encode('ascii'))
+                seed.flush()
+                os.fchmod(seed.fileno(), 0o444)
+                os.fsync(seed.fileno())
+                try:
+                    os.link(seed.name, identity)
+                except FileExistsError:
+                    pass  # Another initializer already created the identity.
+            directory_fd = os.open(directory, os.O_RDONLY | os.O_DIRECTORY)
+            try:
+                os.fsync(directory_fd)
+            finally:
+                os.close(directory_fd)
+        if identity.is_symlink() or not identity.is_file():
+            raise SystemExit('设备标识路径必须是普通文件')
+        with identity.open('rb') as file:
+            raw = file.read(65)
+        value = raw.strip().lower()
+        if len(raw) > 64 or not re.fullmatch(rb'[0-9a-f]{32}', value) or value == b'0' * 32:
+            raise SystemExit('设备标识无效，请恢复原标识文件')
+    volumes:
+      - ngi-license-id:/identity
+    network_mode: none
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    restart: "no"
+
+volumes:
+  ngi-license-id:
