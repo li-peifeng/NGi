@@ -4,6 +4,23 @@
 
 [应用发布页](https://github.com/li-peifeng/NGi/releases) · [Docker Hub](https://hub.docker.com/r/leolitaly/mdc-ngi/tags) · [部署说明](README.md#部署)
 
+## 26.11.23.3
+
+[应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.23.3) · 2026-11-23
+
+### ✨ 新功能
+
+- 许可证页显示设备识别号，方便与签发记录核对
+- Docker 优先读取硬件 UUID 激活 PRO 版。读不到时，许可证页会提示将设备标识文件挂载到 `/ngi-id`
+
+### 🐛 修复
+
+- 移除许可证页底部的离线使用说明
+
+### 🔑 PRO 版本试运行
+
+版本说明：由于开发维护占用大量的时间成本和支出（大部分是 AI 的支出，再次感谢大佬 Vera Lambert 的无私支持），我原本的 Chatgpt Plus 根本不够用，现开了 5X，还是捉襟见肘，幸好有大佬支持。 所以试运行 Pro 版本定价 29 元，标准版现有功能不会有任何减弱，以后可能某些特色功能先开放给 PRO 版本用户，版本维护更新都是一致的，标准版 和 PRO 版本没有区别，希望能拉平一点支出吧， 原爱发电的已发电用户我已全部私信发出许可证激活码， 群里有提过 BUG 反馈和建议被采纳的朋友可以私聊我，赠送许可证一枚。
+
 ## 26.11.23.2
 
 [应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.23.2) · 2026-11-23
