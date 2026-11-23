@@ -4,6 +4,16 @@
 
 [应用发布页](https://github.com/li-peifeng/NGi/releases) · [Docker Hub](https://hub.docker.com/r/leolitaly/mdc-ngi/tags) · [部署说明](README.md#部署)
 
+## 26.11.23.1
+
+[应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.23.1) · 2026-11-23
+
+### ⚠️ 破坏性变更
+
+- Docker 基础镜像低于 **`26.11.23` 的部署必须先升级镜像**。即使网页显示应用已通过 OTA 更新，也以创建容器时使用的基础镜像为准。
+- 请拉取 `leolitaly/mdc-ngi:26.11.23`，保留原 `/data` 挂载并重建容器，再到「设置 → 系统 → 应用更新」安装 `26.11.23.1`。
+- 已使用 `26.11.23` 基础镜像的用户可以直接在网页里安装 `26.11.23.1`。
+
 ## 26.11.23
 
 [应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.23) · 2026-11-23 ｜ [Docker 镜像](https://hub.docker.com/r/leolitaly/mdc-ngi/tags?name=26.11.23) · 2026-11-23
