@@ -4,6 +4,25 @@
 
 [应用发布页](https://github.com/li-peifeng/NGi/releases) · [Docker Hub](https://hub.docker.com/r/leolitaly/mdc-ngi/tags) · [部署说明](README.md#部署)
 
+## 26.11.25.2
+
+[应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.25.2) · 2026-11-25
+
+### ✨ 新功能
+
+- 补齐演员资料时，直接列出匹配的全部 TMDB 和 Gfriends 头像。
+- 激活许可证、换绑和联网校验支持使用全局代理。
+- Emby 用户支持搜索和翻页，媒体库改为下拉多选
+
+### 🐛 修复
+
+- 补齐演员资料时，优先采用演员映射表中已核验的 TMDB ID。
+- 修复字幕仓库给 CloudDrive2 等网盘挂载目录补字幕时可能报「操作不允许」的问题
+
+### 👑 PRO 版本
+
+- PRO 版新增「演员管理」，可浏览 Emby 已选媒体库的演员和作品，并补齐缺少的演员资料
+
 ## 26.11.25
 
 [应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.25) · 2026-11-25 ｜ [Docker 镜像](https://hub.docker.com/r/leolitaly/mdc-ngi/tags?name=26.11.25) · 2026-11-25
