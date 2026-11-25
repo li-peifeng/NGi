@@ -4,6 +4,19 @@
 
 [应用发布页](https://github.com/li-peifeng/NGi/releases) · [Docker Hub](https://hub.docker.com/r/leolitaly/mdc-ngi/tags) · [部署说明](README.md#部署)
 
+## 26.11.25.5
+
+[Docker 镜像](https://hub.docker.com/r/leolitaly/mdc-ngi/tags?name=26.11.25.5) · 2026-11-25
+
+### 🐛 修复
+
+- 修复 Emby 演员页有作品时，NGi 可能显示「库内作品 0 部」并拒绝写入演员资料的问题。
+
+### 👑 PRO 版本
+
+当前 HUB Docker 最新 Latest 版本 26.11.25.5
+Docker 镜像版本 26.11.25.5 以下需要更新镜像！
+
 ## 26.11.25.3
 
 [应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.25.3) · 2026-11-25
