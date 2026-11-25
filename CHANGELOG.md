@@ -4,6 +4,28 @@
 
 [应用发布页](https://github.com/li-peifeng/NGi/releases) · [Docker Hub](https://hub.docker.com/r/leolitaly/mdc-ngi/tags) · [部署说明](README.md#部署)
 
+## 26.11.25.8
+
+[Docker 镜像](https://hub.docker.com/r/leolitaly/mdc-ngi/tags?name=26.11.25.8) · 2026-11-25
+
+### ✨ 新功能
+
+- 演员管理勾选「仅显示无头像」后，可在操作区点击「一键补齐」，补齐符合筛选的全部演员资料并查看进度。
+
+### 🐛 修复
+
+- OTA 构建会提前检查两个架构的产物，发现运行环境不匹配时指出需要重新构建的架构。
+- 修复从同一个监控目录移动不同影片时，目标目录各自独立却要长时间排队的问题。
+- 删除源插件时，同时清除可恢复版本、来源设置和优先级。旧版留下的可恢复插件也可以彻底删除。
+- 修复硬链接模式下重试刮削更换目录后，旧视频链接仍留在媒体库的问题。
+- 演员写真匹配到多个同名或别名相册时，会一起显示所有照片。
+- 演员管理的资料、头像和写真现在使用全局代理，访问 GitHub 时会使用已保存的 GitHub API Token。
+- 修复 CD2 挂载路径未命中任务映射时，移动影片可能变成整片下载的问题。任务日志会显示映射结果。
+
+### ⚠️ 破坏性变更
+
+- 后端程序统一改名为 `mdc-ngi`。Docker 用户需先更新基础镜像，之后可继续使用 OTA。
+
 ## 26.11.25.5
 
 [应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.25.5) · 2026-11-25 ｜ [Docker 镜像](https://hub.docker.com/r/leolitaly/mdc-ngi/tags?name=26.11.25.5) · 2026-11-25
