@@ -6,7 +6,7 @@
 
 ## 26.11.25.8
 
-[Docker 镜像](https://hub.docker.com/r/leolitaly/mdc-ngi/tags?name=26.11.25.8) · 2026-11-25
+[应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.25.8) · 2026-11-25 ｜ [Docker 镜像](https://hub.docker.com/r/leolitaly/mdc-ngi/tags?name=26.11.25.8) · 2026-11-25
 
 ### ✨ 新功能
 
@@ -25,6 +25,11 @@
 ### ⚠️ 破坏性变更
 
 - 后端程序统一改名为 `mdc-ngi`。Docker 用户需先更新基础镜像，之后可继续使用 OTA。
+
+### 👑 PRO 版本
+
+当前 HUB Docker 最新 Latest 版本 26.11.25.8
+Docker 镜像版本 26.11.25.8 以下需要更新镜像！
 
 ## 26.11.25.5
 
