@@ -4,6 +4,20 @@
 
 [应用发布页](https://github.com/li-peifeng/NGi/releases) · [Docker Hub](https://hub.docker.com/r/leolitaly/mdc-ngi/tags) · [部署说明](README.md#部署)
 
+## 26.11.26.2
+
+[应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.26.2) · 2026-11-26
+
+✨
+
+- 文件管理在工具栏下方显示完整路径，下次打开时恢复上次浏览的目录。
+- 元数据优化新增「立即更新演员映射表」。启动时自动检查，手动检查后重新计算 24 小时。
+- 修复通过 Emby 查询网盘旧版时，挂载刷新可能误报文件已变化并中止洗版的问题。
+- 精简各页面的功能提示，保留操作条件和生效说明。
+- 优化「元数据优化」排版，更新按钮用橙色，检查结果通过通知显示。统一自定义映射弹窗的行内按钮样式。
+
+⚡
+
 ## 26.11.26.1
 
 [应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.26.1) · 2026-11-26
