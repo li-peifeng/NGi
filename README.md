@@ -1,5 +1,4 @@
 # MDC-NGi
-
 MDC-NGi（Next Generation innovation）是一款可自托管的影片刮削与媒体整理工具。它能识别影片番号，从多个来源获取资料，整理视频、字幕和图片，并生成供 Emby 等媒体库读取的 NFO。
 
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/li-peifeng/NGi?label=MDC-NGi)](https://github.com/li-peifeng/NGi/releases)
