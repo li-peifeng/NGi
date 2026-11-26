@@ -4,6 +4,32 @@
 
 [应用发布页](https://github.com/li-peifeng/NGi/releases) · [Docker Hub](https://hub.docker.com/r/leolitaly/mdc-ngi/tags) · [部署说明](README.md#部署)
 
+## 26.11.26
+
+[Docker 镜像](https://hub.docker.com/r/leolitaly/mdc-ngi/tags?name=26.11.26) · 2026-11-26
+
+### 🐛 修复
+
+- 日亚高清海报只用确认是女演员的姓名和别名搜索，男演员和性别未知的演员不参与匹配。
+- 同时开启 Tenhow 和日亚时，即使 Tenhow 已找到横版封面，也会优先尝试日亚原图作为海报。
+- 修复蚊香社等影片的预告片下载失败。下载会使用数据源代理，大预告片传输中断后可续传。
+- 媒体管理和刮削记录的海报比例跟随下载设置，选择「不裁剪」时按原图比例显示。
+
+### ⚡ 性能
+
+- 有日亚或 Tenhow 的可用海报时直接采用。缩略图和背景图优先使用 Tenhow，缺少的图片才比较其它来源。
+- Tenhow 提供商品编号时，直接从日亚详情页获取原始海报，省去搜索。
+
+### 👑 PRO 版本
+
+- PRO 版新增「媒体管理」，可查看海报、NFO 和附属文件，支持原地刮削、编辑资料和图片、打水印及下载资源
+- 删除 Emby 演员时优先查找有关联的影片，减少大媒体库的等待时间。
+- 演员详情新增 Emby 跳转、编辑、收藏和删除图标，可清理全部影片中的该演员及相关类型、标签和合集关联。
+- Emby 可选填内网和外网地址，演员和库内作品的链接会根据访问者 IP 自动切换。
+
+当前 HUB Docker 最新 Latest 版本 26.11.26
+Docker 镜像版本 26.11.26 以下需要更新镜像！
+
 ## 26.11.25.8
 
 [应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.25.8) · 2026-11-25 ｜ [Docker 镜像](https://hub.docker.com/r/leolitaly/mdc-ngi/tags?name=26.11.25.8) · 2026-11-25
