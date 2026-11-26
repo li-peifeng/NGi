@@ -6,6 +6,10 @@ MDC-NGi（Next Generation innovation）是一款可自托管的影片刮削与�
 
 [最新应用版本](https://github.com/li-peifeng/NGi/releases/latest) · [中文 Wiki](https://github.com/li-peifeng/NGi/wiki) · [更新日志](CHANGELOG.md) · [版本适用范围](https://github.com/li-peifeng/NGi/wiki/版本适用范围) · [Telegram 发布频道](https://t.me/mdc_ngi)
 
+## 近期更新
+
+[应用 OTA 26.11.27](https://github.com/li-peifeng/NGi/releases/tag/v26.11.27) 加入「立即更新演员映射表」，文件管理可显示完整路径并恢复上次浏览的目录，也修复了 Emby 洗版时网盘刷新引发的文件变化误报。Docker 部署安装本次 OTA 前，请先将低于 **26.11.26** 的基础镜像升级。[版本适用范围](https://github.com/li-peifeng/NGi/wiki/版本适用范围)
+
 ## Features
 
 - [x] **智能刮削**：自动识别番号和分集，按来源优先级获取资料，支持人脸定位裁剪及日亚高清海报。
