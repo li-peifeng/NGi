@@ -1,133 +1,98 @@
-# MDC
-# Next_Generation_innovation
+# MDC-NGi
 
-Yet another Movie Data Capture tool
+MDC-NGi（Next Generation innovation）是一款可自托管的影片刮削与媒体整理工具。它能识别影片番号，从多个来源获取资料，整理视频、字幕和图片，并生成供 Emby 等媒体库读取的 NFO。
 
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/li-peifeng/NGi?label=MDC-NGi)](https://github.com/li-peifeng/NGi/releases)
-[![Docker Pulls](https://img.shields.io/docker/pulls/leolitaly/mdc-ngi?color=orange)](https://hub.docker.com/r/leolitaly/mdc-ngi/tags)
+[![最新应用版本](https://img.shields.io/github/v/release/li-peifeng/NGi?label=%E5%BA%94%E7%94%A8%E7%89%88%E6%9C%AC)](https://github.com/li-peifeng/NGi/releases)
+[![Docker 拉取量](https://img.shields.io/docker/pulls/leolitaly/mdc-ngi?color=orange)](https://hub.docker.com/r/leolitaly/mdc-ngi/tags)
 
-[更新日志](CHANGELOG.md)
+[中文 Wiki](https://github.com/li-peifeng/NGi/wiki) · [更新日志](CHANGELOG.md) · [版本适用范围](https://github.com/li-peifeng/NGi/wiki/版本适用范围) · [Telegram 发布频道](https://t.me/mdc_ngi)
 
-## 写在前面
+## 功能概览
 
-此程序非我原创，单纯出于喜欢，作者可能出于工作原因很长时间没有更新，我重构了此软件，所有源码都是反推出来的，如有冒犯，诉请见谅。
+| 功能 | 可以做什么 |
+| --- | --- |
+| 影片刮削 | 自动识别番号和分集，按字段选择数据源，获取标题、简介和演员资料，支持翻译与自定义源插件。 |
+| 文件整理 | 支持硬链接、软链接、复制、移动、重新整理和原地整理。可创建手动批次，也可监控目录自动处理新文件。 |
+| 图片、字幕与 NFO | 下载日亚或 Tenhow 高清图片，裁剪海报、添加水印、匹配字幕并生成 NFO。 |
+| 刮削记录 | 查看任务进度、分集状态和日志，按需批量重试、重新整理、重新翻译或原地更新 NFO。 |
+| 洗版与网盘 | 按优先级保留旧版或替换资源，支持 Emby 索引查找、CloudDrive2 文件操作和 STRM 原片关联。 |
+| Emby 联动 | 通过 [Magic Tools](https://github.com/li-peifeng/NGi/wiki/Emby与Magic-Tools联动刮削) 从 Emby 提交刮削任务，支持整组分集，也可在刮削成功后自动通知 Emby 刷新元数据。 |
 
-Telegram发布频道：https://t.me/mdc_ngi
-
-## Features
-
-- [x] **智能刮削**：支持30+刮削源，AI人脸识别裁剪，日亚高清海报下载
-- [x] **多种整理模式**：硬链接、复制、移动、软链接、原地整理，适配各种场景
-- [x] **目录监控**：自动检测新文件并刮削，支持性能和兼容两种模式
-- [x] **手动整理**：可视化文件管理，支持文件扫描、批量操作和任务管理
-- [x] **图片增强**：4K/8K、影片类型水印标签，自定义位置和样式
-- [x] **智能翻译**：支持OpenAI/Google等多引擎翻译，内置中文标题数据库
-- [x] **现代界面**：Web管理界面，支持登录认证、主题切换、NSFW模式
-
-## 技术栈
-
-**后端**：Rust - 高性能、内存安全的系统级语言，零成本抽象实现极轻量内存资源占用
-
-**前端**：Next.js - 现代化React框架，优秀的用户体验
-
-**数据库**：SQLite - 轻量级嵌入式数据库，零配置，易维护
-
-**Postgres**：Postgres - 数据库模式，更强劲
-
-**技术优势**：
-- 🚀 **高性能**：Rust原生性能，多线程并发处理，刮削速度快
-- 🛡️ **稳定可靠**：内存安全，无垃圾回收停顿，长时间稳定运行
-- 🎨 **现代界面**：Next.js响应式设计，支持移动端，交互流畅
-- 📦 **部署简单**：编译后单文件部署，Docker一键启动，无复杂依赖
-
-## 功能介绍
-
-### 🎬 视频刮削整理
-
-支持5种整理模式，适配不同存储场景：
-- **硬链接模式**：节省空间，推荐本地使用
-- **复制/移动模式**：适合跨盘或网盘场景  
-- **软链接模式**：创建链接到目标目录
-- **整理模式**：离线重新整理
-- **原地整理模式**：在原目录生成元数据
-
-**刮削流程**：自动识别番号 → 多源抓取元数据 → 下载处理图片 → 整理文件 → 生成NFO
-
-**字幕支持**：自动整理视频自带字幕文件，支持本地字幕库匹配
-
-### 📁 目录监控
-
-- **性能模式**：实时监听文件变更，适合本地存储
-- **兼容模式**：定时检查更新，兼容网盘挂载
-
-支持配置覆盖、文件过滤、自动清理等增强功能
-
-### 🖼️ 图片处理
-
-- **AI裁剪**：人脸识别智能定位裁剪海报
-- **日亚高清**：从Amazon日本搜索下载高清海报  
-- **水印功能**：4K/8K、影片类型标签，多样式可选
-- **独立工具**：专门的海报裁剪工具
-
-### 📊 任务管理与记录
-
-- **任务持久化**：完整的手动任务和监控刮削记录，支持状态追踪，便于维护和分析刮削成果
-- **维护操作**：支持批量重试、停止、删除等任务管理功能；支持指定番号或网页进行刮削
-- **详情页面**：美观的刮削详情页，包含画廊展示、完整元数据分析和实时日志推送；支持多来源数据手动精选修正
-- **日志分析**：详细的刮削日志和错误信息，便于问题排查
-
-### 🌐 数据源支持
-
-覆盖各类视频类型的30+刮削源，支持优先级配置、防反爬、自动重试
+PRO 版提供[媒体管理](https://github.com/li-peifeng/NGi/wiki/PRO媒体管理)，可浏览已挂载的影片、编辑 NFO 和图片、原地刮削及下载附属资源。还可在[演员管理](https://github.com/li-peifeng/NGi/wiki/PRO演员管理与Emby自动补齐)查看 Emby 库内演员、作品及写真，手动补齐资料，或配置 Emby Webhook 后自动补齐新入库影片的演员资料。
 
 ## 部署
 
-镜像版本可以去本项目[dockerhub页面](https://hub.docker.com/r/leolitaly/mdc-ngi)查看
+Docker 镜像为 `leolitaly/mdc-ngi`，支持 Linux AMD64 和 ARM64。以下示例用于**新部署**。已有部署升级时，请复用原 Compose 项目、数据挂载和运行用户。
 
-### docker-compose
+### Docker Compose
+
+新建 `compose.yaml`，把两个示例宿主目录换成实际路径。默认运行用户为 `10001:10001`，需要对 `./data` 和输出目录有写权限，对输入目录有读取和遍历权限。移动视频时还需对输入目录有写权限。
 
 ```yaml
 services:
   ngi:
     image: leolitaly/mdc-ngi:latest
-    container_name: ngi
-    user: "0:0"
+    user: "10001:10001"
     ports:
-      - 19218:19218
+      - "19218:19218"
     environment:
-      - TZ=Europe/Rome
+      TZ: Europe/Rome
     volumes:
       - ./data:/data
-      # PRO 的 UUID 读取失败时，可使用下文的设备标识自动生成配置。
+      - /volume1/downloads:/downloads
+      - /volume1/movies:/movies
     stop_grace_period: 40s
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true
 ```
 
+在 Compose 文件所在目录运行下列命令。前两条命令用于新建的数据目录。
+
+```sh
+mkdir -p data
+sudo chown 10001:10001 data
+docker compose up -d
+```
+
+打开 `http://<宿主机地址>:19218`，创建登录账号。在 NGi 中使用容器内路径 `/downloads` 和 `/movies`。先提交少量文件验证来源、输出路径和 NFO，再开启目录监控。详见[快速开始](https://github.com/li-peifeng/NGi/wiki/快速开始)和[目录挂载与权限](https://github.com/li-peifeng/NGi/wiki/目录挂载与权限)。
+
 ### PRO 版设备标识
 
-从应用版本 `26.11.23.3` 起，NGi 新激活 PRO 时优先读取 NAS 硬件 UUID。能读到 UUID 时，可以直接激活。标准版也可直接使用上面的 Compose。能否读取取决于 NAS 和容器运行用户。
+新激活 PRO 时，NGi 优先读取宿主机硬件 UUID。若「设置 → 许可证」提示无法读取 UUID，将 [compose.license-id.yaml](compose.license-id.yaml) 保存到原 Compose 文件旁，执行下列命令。
 
-如果「设置 → 许可证」提示无法读取硬件 UUID，可在包含自动生成支持的应用版本中使用 [compose.license-id.yaml](compose.license-id.yaml)。当前已发布的应用仍兼容已有的标识文件。
+```sh
+docker compose -f compose.yaml -f compose.license-id.yaml up -d ngi
+```
 
-将该文件放在原 Compose 文件旁，保留原 `/data`，按实际文件名执行 `docker compose -f compose.yaml -f compose.license-id.yaml up -d ngi`。标识会自动保存在独立的 `ngi-license-id` 命名卷。许可证页出现「已检测到挂载的设备标识」后即可激活 PRO。重建时沿用同一 Compose 项目名并保留该卷。
+初始化服务会把设备标识保存到 `ngi-license-id` 命名卷。许可证页显示「已检测到挂载的设备标识」后即可激活。重建时沿用同一个 Compose 项目名并保留该卷。后续维护也使用同样的两份 Compose 文件。
 
-#### 可选的手动配置
+首次激活也可手动准备标识。在 Compose 目录没有 `id` 文件时，运行 `openssl rand -hex 16 > ./id` 生成一次，在 `ngi` 的卷挂载中加入 `./id:/ngi-id:ro`，并确保容器用户可读取。已有标识时沿用原值。
 
-在 NAS 的 Compose 项目目录下准备普通文件 `id`，与 `data` 目录并列，确保容器运行用户可读。**首次激活且尚未准备标识文件时**，可在该目录执行 `openssl rand -hex 16 > ./id` 生成一次。已有文件绑定请沿用原标识。
+已有 PRO 授权的实例应保留原 `/data` 和已绑定的设备标识。若原实例使用 UUID，重建后应继续能读取同一个 UUID。已有 `/run/ngi-host-id` 或 `/ngi-id` 挂载的实例继续沿用原标识。手动挂载和换绑步骤见 [Docker 部署指南](https://github.com/li-peifeng/NGi/wiki/Docker部署#pro-版设备标识)。
 
-在 `ngi` 服务的 `volumes` 下添加 `- ./id:/ngi-id:ro`，保留原 `/data` 挂载，再重新部署容器。后续重建时复用同一个 `id` 文件。
+## 更新与维护
 
-已激活的实例需要保留原绑定。已有文件标识的部署可继续使用 `/etc/machine-id:/run/ngi-host-id:ro`，改用 `./id` 时请原样复制旧标识。已有 UUID 绑定的部署在调整容器运行用户后仍需能读取原 UUID。详见 [Wiki 的 PRO 版设备标识说明](https://github.com/li-peifeng/NGi/wiki/Docker%E9%83%A8%E7%BD%B2#pro-%E7%89%88%E8%AE%BE%E5%A4%87%E6%A0%87%E8%AF%86)。
+| 更新方式 | 操作 |
+| --- | --- |
+| 应用 OTA | 在 NGi 左侧「更新」检查版本、查看摘要并安装。开始前等待活动任务结束。 |
+| Docker 基础镜像 | 应用提示需要更新镜像时，沿用原 Compose 文件和项目名执行 `docker compose pull ngi`、`docker compose up -d ngi`。使用固定镜像标签时，先更新 Compose 中的标签。保留原 `/data` 和已绑定的设备标识。 |
 
+应用版本和基础镜像版本分别发布。升级前查看[公开 Release](https://github.com/li-peifeng/NGi/releases)和 [Docker 标签](https://hub.docker.com/r/leolitaly/mdc-ngi/tags)，以[版本适用范围](https://github.com/li-peifeng/NGi/wiki/版本适用范围)和应用内兼容性提示为准。备份及回退步骤见[更新升级与回退](https://github.com/li-peifeng/NGi/wiki/更新升级与回退)与[备份恢复与迁移](https://github.com/li-peifeng/NGi/wiki/备份恢复与迁移)。
 
-## 支持一下原作者
+## 遇到问题
 
-你可以送一杯咖啡给上游原作者，以表示对这个项目的支持😉
+先查看 [常见问题](https://github.com/li-peifeng/NGi/wiki/常见问题)和[日志与故障排查](https://github.com/li-peifeng/NGi/wiki/日志与故障排查)。提交 [GitHub Issue](https://github.com/li-peifeng/NGi/issues) 时，请附上应用版本、镜像标签、出错步骤及对应日志，并遮盖账号、密钥和私人路径。
 
-<img src="https://user-images.githubusercontent.com/124132602/222636597-f8d48940-a528-41e8-9362-8d15f7517bf6.png" width="200" />
+## 致谢与支持
 
-## 也可以支持一下我，哈哈
+感谢原版 Movie Data Capture 的作者。MDC-NGi 基于原版工具的使用流程重构，后端使用 Rust，Web 界面使用 Next.js，支持 SQLite 和 PostgreSQL。
 
- https://ifdian.net/a/leoavdb
+<details>
+<summary>支持原作者</summary>
+
+<img src="https://user-images.githubusercontent.com/124132602/222636597-f8d48940-a528-41e8-9362-8d15f7517bf6.png" width="200" alt="原作者赞助二维码" />
+
+</details>
+
+[支持 MDC-NGi 维护者](https://ifdian.net/a/leoavdb)
