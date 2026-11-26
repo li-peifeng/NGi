@@ -1,32 +1,42 @@
 # MDC-NGi
 
-MDC-NGi（Next Generation innovation）是一款可自托管的影片刮削与媒体整理工具。它能识别影片番号，从多个来源获取资料，整理视频、字幕和图片，并生成供 Emby 等媒体库读取的 NFO。
+<sub>MDC-NGi（Next Generation innovation）是一款可自托管的影片刮削与媒体整理工具。它能识别影片番号，从多个来源获取资料，整理视频、字幕和图片，并生成供 Emby 等媒体库读取的 NFO。</sub>
 
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/li-peifeng/NGi?label=MDC-NGi)](https://github.com/li-peifeng/NGi/releases)
 [![Docker Pulls](https://img.shields.io/docker/pulls/leolitaly/mdc-ngi?color=orange)](https://hub.docker.com/r/leolitaly/mdc-ngi/tags)
 
 [最新应用版本](https://github.com/li-peifeng/NGi/releases/latest) · [中文 Wiki](https://github.com/li-peifeng/NGi/wiki) · [更新日志](CHANGELOG.md) · [版本适用范围](https://github.com/li-peifeng/NGi/wiki/版本适用范围) · [Telegram 发布频道](https://t.me/mdc_ngi)
 
-## 功能概览
+## 特色功能
 
-| 功能 | 可以做什么 |
+| 功能 | 使用场景 |
 | --- | --- |
-| 影片刮削 | 自动识别番号和分集，按字段选择数据源，获取标题、简介和演员资料，支持翻译与自定义源插件。 |
-| 文件整理 | 支持硬链接、软链接、复制、移动、重新整理和原地整理。可创建手动批次，也可监控目录自动处理新文件。 |
-| 图片、字幕与 NFO | 下载日亚或 Tenhow 高清图片，裁剪海报、添加水印、匹配字幕并生成 NFO。 |
-| 刮削记录 | 查看任务进度、分集状态和日志，按需批量重试、重新整理、重新翻译或原地更新 NFO。 |
-| 洗版与网盘 | 按优先级保留旧版或替换资源，支持 Emby 索引查找、CloudDrive2 文件操作和 STRM 原片关联。 |
-| Emby 联动 | 通过 [Magic Tools](https://github.com/li-peifeng/NGi/wiki/Emby与Magic-Tools联动刮削) 从 Emby 提交刮削任务，支持整组分集，也可在刮削成功后自动通知 Emby 刷新元数据。 |
+| [多源刮削](https://github.com/li-peifeng/NGi/wiki/数据源与优先级) | <sub>可给标题、演员、海报等字段分别设定来源优先级。自动识别的番号有误时，可在重试时指定番号或来源详情页。</sub> |
+| [自定义源插件](https://github.com/li-peifeng/NGi/wiki/源插件使用与规则) | <sub>可导入 JSON 或 JavaScript 规则扩展数据源，在管理页测试搜索和资料获取。</sub> |
+| [命名与分类](https://github.com/li-peifeng/NGi/wiki/命名规则) | <sub>用模板将番号、演员、分集和画质写入目录名或文件名。保存前可预览归档路径。</sub> |
+| [六种整理模式](https://github.com/li-peifeng/NGi/wiki/整理模式与覆盖策略) | <sub>支持硬链接、软链接、复制、移动、重新整理和原地整理。可手动批量提交，也可为不同监控目录分别配置处理规则。</sub> |
+| [高清海报与预告片](https://github.com/li-peifeng/NGi/wiki/图片下载裁剪与水印) | <sub>可用 Tenhow 与日亚查找高清海报，支持人脸定位裁剪、自定义水印及本地 NFO 输出。预告片下载使用对应来源的代理，符合条件的大文件可续传。</sub> |
+| [字幕自动补齐](https://github.com/li-peifeng/NGi/wiki/字幕匹配与命名) | <sub>可匹配现有字幕，也可使用 NGi 字幕仓库和迅雷。开启仓库自动补齐后，可为缺字幕的已完成记录补字幕。</sub> |
+| [已整理影片维护](https://github.com/li-peifeng/NGi/wiki/重新整理使用指南) | <sub>可从记录重新套用命名规则，或批量原地更新 NFO。只执行「重新翻译」时，仅更新标题、简介译文和原位置的 NFO。</sub> |
+| [洗版与 STRM](https://github.com/li-peifeng/NGi/wiki/洗版旧资源管理) | <sub>可通过目录或 Emby 查找旧版，按画质、字幕等条件保留或替换。支持跨媒体库查找、CloudDrive2 路径映射和 STRM 原片联动。</sub> |
+| [Emby 与 Magic Tools](https://github.com/li-peifeng/NGi/wiki/Emby与Magic-Tools联动刮削) | <sub>从 Emby 菜单提交影片或整组分集。可开启刮削成功后的合并刷新，集中通知 Emby 更新元数据。</sub> |
+| [演员与译名](https://github.com/li-peifeng/NGi/wiki/自定义演员映射与AVDB) | <sub>用演员映射表统一别名或维护自定义显示名，可导出 JSON 或同步到兼容的 AVDB。标题与简介支持按配置翻译。</sub> |
 
-PRO 版提供[媒体管理](https://github.com/li-peifeng/NGi/wiki/PRO媒体管理)，可浏览已挂载的影片、编辑 NFO 和图片、原地刮削及下载附属资源。还可在[演员管理](https://github.com/li-peifeng/NGi/wiki/PRO演员管理与Emby自动补齐)查看 Emby 库内演员、作品及写真，手动补齐资料，或配置 Emby Webhook 后自动补齐新入库影片的演员资料。
+### PRO 功能
+
+| 功能 | 使用场景 |
+| --- | --- |
+| [媒体管理](https://github.com/li-peifeng/NGi/wiki/PRO媒体管理) | <sub>索引本地及已挂载的影片，按目录或名称筛选。可直接编辑 NFO、海报和字幕，在影片所在目录刮削，或下载缺少的剧照、字幕和预告片。</sub> |
+| [Emby 演员管理](https://github.com/li-peifeng/NGi/wiki/PRO演员管理与Emby自动补齐) | <sub>浏览选定 Emby 库的演员、作品和写真。可预览并补齐头像、简介等资料，也可按筛选结果一键补齐无头像演员。</sub> |
+| [新入库自动补齐](https://github.com/li-peifeng/NGi/wiki/PRO演员管理与Emby自动补齐#配置-emby-webhook) | <sub>配置 Emby 的「新增媒体」Webhook 后，NGi 会为新入库影片的演员补充缺失资料，可查看回调和队列进度。</sub> |
 
 ## 部署
 
-Docker 镜像为 `leolitaly/mdc-ngi`，支持 Linux AMD64 和 ARM64。以下示例用于**新部署**。已有部署升级时，请复用原 Compose 项目、数据挂载和运行用户。
+<sub>Docker 镜像为 `leolitaly/mdc-ngi`，支持 Linux AMD64 和 ARM64。以下示例用于**新部署**。已有部署升级时，请复用原 Compose 项目、数据挂载和运行用户。</sub>
 
 ### Docker Compose
 
-新建 `compose.yaml`，把两个示例宿主目录换成实际路径。默认运行用户为 `10001:10001`，需要对 `./data` 和输出目录有写权限，对输入目录有读取和遍历权限。移动视频时还需对输入目录有写权限。
+<sub>新建 `compose.yaml`，把两个示例宿主目录换成实际路径。默认运行用户为 `10001:10001`，需要对 `./data` 和输出目录有写权限，对输入目录有读取和遍历权限。移动视频时还需对输入目录有写权限。</sub>
 
 ```yaml
 services:
@@ -47,7 +57,7 @@ services:
       - no-new-privileges:true
 ```
 
-在 Compose 文件所在目录运行下列命令。前两条命令用于新建的数据目录。
+<sub>在 Compose 文件所在目录运行下列命令。前两条命令用于新建的数据目录。</sub>
 
 ```sh
 mkdir -p data
@@ -55,38 +65,38 @@ sudo chown 10001:10001 data
 docker compose up -d
 ```
 
-打开 `http://<宿主机地址>:19218`，创建登录账号。在 NGi 中使用容器内路径 `/downloads` 和 `/movies`。先提交少量文件验证来源、输出路径和 NFO，再开启目录监控。详见[快速开始](https://github.com/li-peifeng/NGi/wiki/快速开始)和[目录挂载与权限](https://github.com/li-peifeng/NGi/wiki/目录挂载与权限)。
+<sub>打开 `http://<宿主机地址>:19218`，创建登录账号。在 NGi 中使用容器内路径 `/downloads` 和 `/movies`。先提交少量文件验证来源、输出路径和 NFO，再开启目录监控。详见[快速开始](https://github.com/li-peifeng/NGi/wiki/快速开始)和[目录挂载与权限](https://github.com/li-peifeng/NGi/wiki/目录挂载与权限)。</sub>
 
 ### PRO 版设备标识
 
-新激活 PRO 时，NGi 优先读取宿主机硬件 UUID。若「设置 → 许可证」提示无法读取 UUID，将 [compose.license-id.yaml](compose.license-id.yaml) 保存到原 Compose 文件旁，执行下列命令。
+<sub>新激活 PRO 时，NGi 优先读取宿主机硬件 UUID。若「设置 → 许可证」提示无法读取 UUID，将 [compose.license-id.yaml](compose.license-id.yaml) 保存到原 Compose 文件旁，执行下列命令。</sub>
 
 ```sh
 docker compose -f compose.yaml -f compose.license-id.yaml up -d ngi
 ```
 
-初始化服务会把设备标识保存到 `ngi-license-id` 命名卷。许可证页显示「已检测到挂载的设备标识」后即可激活。重建时沿用同一个 Compose 项目名并保留该卷。后续维护也使用同样的两份 Compose 文件。
+<sub>初始化服务会把设备标识保存到 `ngi-license-id` 命名卷。许可证页显示「已检测到挂载的设备标识」后即可激活。重建时沿用同一个 Compose 项目名并保留该卷。后续维护也使用同样的两份 Compose 文件。</sub>
 
-首次激活也可手动准备标识。在 Compose 目录没有 `id` 文件时，运行 `openssl rand -hex 16 > ./id` 生成一次，在 `ngi` 的卷挂载中加入 `./id:/ngi-id:ro`，并确保容器用户可读取。已有标识时沿用原值。
+<sub>首次激活也可手动准备标识。在 Compose 目录没有 `id` 文件时，运行 `openssl rand -hex 16 > ./id` 生成一次，在 `ngi` 的卷挂载中加入 `./id:/ngi-id:ro`，并确保容器用户可读取。已有标识时沿用原值。</sub>
 
-已有 PRO 授权的实例应保留原 `/data` 和已绑定的设备标识。若原实例使用 UUID，重建后应继续能读取同一个 UUID。已有 `/run/ngi-host-id` 或 `/ngi-id` 挂载的实例继续沿用原标识。手动挂载和换绑步骤见 [Docker 部署指南](https://github.com/li-peifeng/NGi/wiki/Docker部署#pro-版设备标识)。
+<sub>已有 PRO 授权的实例应保留原 `/data` 和已绑定的设备标识。若原实例使用 UUID，重建后应继续能读取同一个 UUID。已有 `/run/ngi-host-id` 或 `/ngi-id` 挂载的实例继续沿用原标识。手动挂载和换绑步骤见 [Docker 部署指南](https://github.com/li-peifeng/NGi/wiki/Docker部署#pro-版设备标识)。</sub>
 
 ## 更新与维护
 
 | 更新方式 | 操作 |
 | --- | --- |
-| 应用 OTA | 在 NGi 左侧「更新」检查版本、查看摘要并安装。开始前等待活动任务结束。 |
-| Docker 基础镜像 | 应用提示需要更新镜像时，沿用原 Compose 文件和项目名执行 `docker compose pull ngi`、`docker compose up -d ngi`。使用固定镜像标签时，先更新 Compose 中的标签。保留原 `/data` 和已绑定的设备标识。 |
+| 应用 OTA | <sub>在 NGi 左侧「更新」检查版本、查看摘要并安装。开始前等待活动任务结束。</sub> |
+| Docker 基础镜像 | <sub>应用提示需要更新镜像时，沿用原 Compose 文件和项目名执行 `docker compose pull ngi`、`docker compose up -d ngi`。使用固定镜像标签时，先更新 Compose 中的标签。保留原 `/data` 和已绑定的设备标识。</sub> |
 
-应用版本和基础镜像版本分别发布。升级前查看[公开 Release](https://github.com/li-peifeng/NGi/releases)和 [Docker 标签](https://hub.docker.com/r/leolitaly/mdc-ngi/tags)，以[版本适用范围](https://github.com/li-peifeng/NGi/wiki/版本适用范围)和应用内兼容性提示为准。备份及回退步骤见[更新升级与回退](https://github.com/li-peifeng/NGi/wiki/更新升级与回退)与[备份恢复与迁移](https://github.com/li-peifeng/NGi/wiki/备份恢复与迁移)。
+<sub>应用版本和基础镜像版本分别发布。升级前查看[公开 Release](https://github.com/li-peifeng/NGi/releases)和 [Docker 标签](https://hub.docker.com/r/leolitaly/mdc-ngi/tags)，以[版本适用范围](https://github.com/li-peifeng/NGi/wiki/版本适用范围)和应用内兼容性提示为准。备份及回退步骤见[更新升级与回退](https://github.com/li-peifeng/NGi/wiki/更新升级与回退)与[备份恢复与迁移](https://github.com/li-peifeng/NGi/wiki/备份恢复与迁移)。</sub>
 
 ## 遇到问题
 
-先查看 [常见问题](https://github.com/li-peifeng/NGi/wiki/常见问题)和[日志与故障排查](https://github.com/li-peifeng/NGi/wiki/日志与故障排查)。提交 [GitHub Issue](https://github.com/li-peifeng/NGi/issues) 时，请附上应用版本、镜像标签、出错步骤及对应日志，并遮盖账号、密钥和私人路径。
+<sub>先查看 [常见问题](https://github.com/li-peifeng/NGi/wiki/常见问题)和[日志与故障排查](https://github.com/li-peifeng/NGi/wiki/日志与故障排查)。提交 [GitHub Issue](https://github.com/li-peifeng/NGi/issues) 时，请附上应用版本、镜像标签、出错步骤及对应日志，并遮盖账号、密钥和私人路径。</sub>
 
 ## 致谢与支持
 
-感谢原版 Movie Data Capture 的作者。MDC-NGi 基于原版工具的使用流程重构，后端使用 Rust，Web 界面使用 Next.js，支持 SQLite 和 PostgreSQL。
+<sub>感谢原版 Movie Data Capture 的作者。MDC-NGi 基于原版工具的使用流程重构，后端使用 Rust，Web 界面使用 Next.js，支持 SQLite 和 PostgreSQL。</sub>
 
 <details>
 <summary>支持原作者</summary>
