@@ -36,13 +36,13 @@ Docker 镜像为 `leolitaly/mdc-ngi`，支持 Linux AMD64 和 ARM64。以下示�
 
 ### Docker Compose
 
-新建 `compose.yaml`，把两个示例宿主目录换成实际路径。默认运行用户为 `10001:10001`，需要对 `./data` 和输出目录有写权限，对输入目录有读取和遍历权限。移动视频时还需对输入目录有写权限。
+新建 `compose.yaml`，把两个示例宿主目录换成实际路径。此示例使用 `0:0` 在容器内以 root 运行，可减少 NAS 宿主目录用户和组不匹配造成的权限问题。
 
 ```yaml
 services:
   ngi:
     image: leolitaly/mdc-ngi:latest
-    user: "10001:10001"
+    user: "0:0"
     ports:
       - "19218:19218"
     environment:
@@ -57,15 +57,16 @@ services:
       - no-new-privileges:true
 ```
 
-在 Compose 文件所在目录运行下列命令。前两条命令用于新建的数据目录。
+在 Compose 文件所在目录运行下列命令。
 
 ```sh
 mkdir -p data
-sudo chown 10001:10001 data
 docker compose up -d
 ```
 
 打开 `http://<宿主机地址>:19218`，创建登录账号。在 NGi 中使用容器内路径 `/downloads` 和 `/movies`。先提交少量文件验证来源、输出路径和 NFO，再开启目录监控。详见[快速开始](https://github.com/li-peifeng/NGi/wiki/快速开始)和[目录挂载与权限](https://github.com/li-peifeng/NGi/wiki/目录挂载与权限)。
+
+如需以普通用户运行，可将 `user` 改为 `"10001:10001"`（镜像默认值）或 NAS 上有权限的 UID/GID，并为该用户配置数据目录、下载目录和整理目录的访问权限。已有实例切换运行用户前，请先核对现有数据和媒体文件的权限。
 
 ### PRO 版设备标识
 
