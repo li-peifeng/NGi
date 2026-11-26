@@ -160,7 +160,7 @@ docker compose -f compose.yaml -f compose.license-id.yaml up -d ngi
 
 ## 致谢与支持
 
-感谢原版 Movie Data Capture 的作者。MDC-NGi 基于原版工具的使用流程重构，后端使用 Rust，Web 界面使用 Next.js，支持 SQLite 和 PostgreSQL。
+感谢原版 MDC-NG 作者。MDC-NGi 基于原版工具的使用流程重构，后端使用 Rust，Web 界面使用 Next.js，支持 SQLite 和 PostgreSQL。
 
 <details>
 <summary>支持原作者</summary>
