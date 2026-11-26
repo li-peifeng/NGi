@@ -8,14 +8,6 @@
 
 [应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.27) · 2026-11-27
 
-### 🐛 修复
-
-- 演员补齐队列的返回入口与演员详情样式一致。
-
-## 26.11.26.2
-
-[应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.26.2) · 2026-11-26
-
 ✨
 
 - 文件管理在工具栏下方显示完整路径，下次打开时恢复上次浏览的目录。
