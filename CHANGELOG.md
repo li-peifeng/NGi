@@ -4,6 +4,14 @@
 
 [应用发布页](https://github.com/li-peifeng/NGi/releases) · [Docker Hub](https://hub.docker.com/r/leolitaly/mdc-ngi/tags) · [部署说明](README.md#部署)
 
+## 26.11.27
+
+[应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.27) · 2026-11-27
+
+### 🐛 修复
+
+- 演员补齐队列的返回入口与演员详情样式一致。
+
 ## 26.11.26.2
 
 [应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.26.2) · 2026-11-26
