@@ -4,9 +4,31 @@
 
 [应用发布页](https://github.com/li-peifeng/NGi/releases) · [Docker Hub](https://hub.docker.com/r/leolitaly/mdc-ngi/tags) · [部署说明](README.md#部署)
 
+## 26.11.27.1
+
+[应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.27.1) · 2026-11-27
+
+### 🐛 修复
+
+- 修复 Emby 按番号漏查同名旧文件时洗版失败的问题。现在会在已选媒体库内按完整路径再查一次。
+- 云盘空目录清理按挂载根记录检查结果，后续清理直接复用。
+- 移动云盘影片时，同一挂载内移动失败会保留源文件，避免重新下载整部影片。
+
+### ⚠️ 破坏性变更
+
+- 移除 CD2 文件操作接口。整理和洗版直接使用挂载目录，无需填写地址、Token 或接口路径映射。
+
 ## 26.11.27
 
 [应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.27) · 2026-11-27
+
+### 🐛 修复
+
+- 演员补齐队列的返回入口与演员详情样式一致。
+
+## 26.11.26.2
+
+[应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.26.2) · 2026-11-26
 
 ✨
 
