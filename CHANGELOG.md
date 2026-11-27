@@ -4,6 +4,18 @@
 
 [应用发布页](https://github.com/li-peifeng/NGi/releases) · [Docker Hub](https://hub.docker.com/r/leolitaly/mdc-ngi/tags) · [部署说明](README.md#部署)
 
+## 26.11.27.2
+
+[应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.27.2) · 2026-11-27
+
+### ✨ 新功能
+
+- 重新设计设置页标签栏（不一定好用，有好的可以提意见，不要用滑动的😌）
+
+### 🐛 修复
+
+- 修复刮削或重新翻译后，Emby 已入库影片的演员等资料可能没有更新的问题。
+
 ## 26.11.27.1
 
 [应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.27.1) · 2026-11-27
