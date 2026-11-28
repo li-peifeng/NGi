@@ -4,6 +4,12 @@
 
 [应用发布页](https://github.com/li-peifeng/NGi/releases) · [Docker Hub](https://hub.docker.com/r/leolitaly/mdc-ngi/tags) · [部署说明](README.md#部署)
 
+## 26.11.28.1
+
+[应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.28.1) · 2026-11-28
+
+变更已在上一版本列出。
+
 ## 26.11.28
 
 [应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.28) · 2026-11-28 ｜ [Docker 镜像](https://hub.docker.com/r/leolitaly/mdc-ngi/tags?name=26.11.28) · 2026-11-28
