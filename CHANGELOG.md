@@ -4,6 +4,28 @@
 
 [应用发布页](https://github.com/li-peifeng/NGi/releases) · [Docker Hub](https://hub.docker.com/r/leolitaly/mdc-ngi/tags) · [部署说明](README.md#部署)
 
+## 26.11.28
+
+[Docker 镜像](https://hub.docker.com/r/leolitaly/mdc-ngi/tags?name=26.11.28) · 2026-11-28
+
+### ✨ 新功能
+
+- 媒体管理可从影片已有的横版 Thumb 裁剪海报。
+
+### 🐛 修复
+
+- Emby 的额外分集优先用横版缩略图，从右上角裁成 16:9，铺满封面卡片。
+- 修复整组分集入库时后续分集可能先刮削的问题。有 CD1 时优先从 CD1 开始。
+- 优化许可证页的心跳图标、异常提示和激活状态样式。
+- 修复 DMM 刮削到 DVD 商品时取不到预告片的问题，例如 ABF-380。
+- 同目录的字母分集可区分第 3 集 `-C` 和带中文字幕的 `-C-C`。单独刮削 `-cd1`、`-cd2` 等文件时也保留分集编号，避免后到的分集覆盖前一集。
+- 分集刮削按集匹配本地和在线字幕。迅雷也会搜索 CD1、CD2、CD3 等分集，并从字幕包里选取对应文件。
+
+### 👑 PRO 版本
+
+当前 HUB Docker 最新 Latest 版本 26.11.28
+Docker 镜像版本 26.11.28 以下需要更新镜像！
+
 ## 26.11.27.2
 
 [应用更新](https://github.com/li-peifeng/NGi/releases/tag/v26.11.27.2) · 2026-11-27
